@@ -14,16 +14,16 @@ import { Link } from "react-router-dom";
 
 const SideBar = () => {
   return (
-    <div className="bg-gradient-to-b from-pink-200 to-purple-100 h-screen p-4 w-[290px]">
+    <div className="bg-gradient-to-b from-pink-200 to-purple-100 h-screen p-4 w-full md:w-[290px]">
       <div className="flex flex-col gap-5">
         <p className="flex items-end justify-end">
           <HeroiconsOutlineMenu className="size-6" />
         </p>
-        <p className="text-5xl font-extrabold bg-gradient-to-t from-[#333399] via-pink-400 to-pink-400 text-transparent bg-clip-text flex self-center">
+        <p className="text-4xl md:text-5xl font-extrabold bg-gradient-to-t from-[#333399] via-pink-400 to-pink-400 text-transparent bg-clip-text flex self-center">
           Xoolve
         </p>
         <ul className="font-semibold text-[#707482] flex flex-col gap-3">
-          <Link to={"#"}>
+          <Link to={"/freelancer/profile"}>
             <li className="p-3 flex gap-4">
               <IconamoonProfileCircleThin className="size-6" /> Profile
             </li>
