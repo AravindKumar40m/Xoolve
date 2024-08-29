@@ -28,13 +28,13 @@ const SideBar = () => {
               <IconamoonProfileCircleThin className="size-6" /> Profile
             </li>
           </Link>
-          <Link to={"/freelancer/projects"}>
+          <Link to={"/freelancer/job"}>
             <li className="p-3 flex gap-4">
               <CarbonSearch className="size-6" />
               Search Job
             </li>
           </Link>
-          <Link to={"#"}>
+          <Link to={"/freelancer/projects"}>
             <li className="p-3 flex gap-4">
               <LucideUsers className="size-6" />
               My Network
