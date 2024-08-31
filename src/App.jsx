@@ -5,6 +5,8 @@ import Freelancer from "./components/Freelancer/Freelancer";
 import Profile from "./components/Freelancer/Profile";
 import JobPage from "./components/Freelancer/JobPage";
 import ProjectDashboard from "./components/Freelancer/ProjectDashboard";
+import MentorLayout from "./components/StartupMentors/Layout";
+import Dashboard from "./components/StartupMentors/Dashboard";
 
 const App = () => {
   return (
@@ -15,6 +17,9 @@ const App = () => {
           <Route path="profile" element={<Profile />} />
           <Route path="job" element={<JobPage />} />
           <Route path="projects" element={<ProjectDashboard />} />
+        </Route>
+        <Route path="/mentor/" element={<MentorLayout />}>
+          <Route path="dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>

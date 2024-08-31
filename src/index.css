@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-calendar {
+  border-radius: 0.75rem; /* Apply rounded-xl */
+}
+
+.custom-calendar .react-calendar__tile--now {
+  background: #ff00cc; /* Change color to pink */
+  border-radius: 50%; /* Make it rounded-full */
+}
+
+.custom-calendar .react-calendar__tile--now:hover,
+.custom-calendar .react-calendar__tile--now:focus {
+  background: #ff99c8; /* Slightly darker pink on hover/focus */
+}

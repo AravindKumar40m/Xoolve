@@ -344,3 +344,75 @@ export function TablerSettings(props) {
     </svg>
   );
 }
+
+export function MageDashboardBar(props) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <g fill="none" stroke="currentColor">
+        <rect
+          width={18.5}
+          height={18.5}
+          x={2.75}
+          y={2.75}
+          strokeWidth={1.5}
+          rx={6}
+        ></rect>
+        <path
+          strokeLinecap="round"
+          strokeWidth={1.6}
+          d="M7.672 16.222v-5.099m4.451 5.099V7.778m4.205 8.444V9.82"
+        ></path>
+      </g>
+    </svg>
+  );
+}
+
+export function IconParkOutlineTransactionOrder(props) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 48 48"
+      {...props}
+    >
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeLinejoin="round"
+        strokeWidth={4}
+      >
+        <rect width={30} height={36} x={9} y={8} rx={2}></rect>
+        <path
+          strokeLinecap="round"
+          d="M18 4v6m12-6v6m-14 9h16m-16 8h12m-12 8h8"
+        ></path>
+      </g>
+    </svg>
+  );
+}
+
+export function IconoirReports(props) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        d="M9 21h6m-6 0v-5m0 5H3.6a.6.6 0 0 1-.6-.6v-3.8a.6.6 0 0 1 .6-.6H9m6 5V9m0 12h5.4a.6.6 0 0 0 .6-.6V3.6a.6.6 0 0 0-.6-.6h-4.8a.6.6 0 0 0-.6.6V9m0 0H9.6a.6.6 0 0 0-.6.6V16"
+      ></path>
+    </svg>
+  );
+}
