@@ -28,7 +28,7 @@ const SideBar = () => {
               <MageDashboardBar className="size-6" /> Dashboard
             </li>
           </Link>
-          <Link to={"#"}>
+          <Link to={"/mentor/profile"}>
             <li className="p-3 flex gap-4">
               <IconamoonProfileCircleThin className="size-7" />
               Profile

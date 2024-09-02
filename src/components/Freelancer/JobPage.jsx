@@ -7,13 +7,14 @@ import {
   MdiBellNotificationOutline,
   IcOutlineShare,
 } from "../../assets/Icons";
-import image from "../../assets/jobProfile.jpg";
 import Select from "react-select";
-import slider from "../../assets/Slider.jpg";
-import google from "../../assets/jobPicture/Google.jpg";
-import tcs from "../../assets/jobPicture/tcs.jpg";
-import capgemini from "../../assets/jobPicture/capgimini.jpg";
-import accenture from "../../assets/jobPicture/accenture.jpg";
+import { image, slider } from "../../assets/index";
+import {
+  google,
+  tcs,
+  capgemini,
+  accenture,
+} from "../../assets/jobPicture/index";
 import JobDetailPage from "./jobDetailPage";
 
 const JobPage = () => {

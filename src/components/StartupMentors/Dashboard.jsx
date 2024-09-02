@@ -4,14 +4,18 @@ import {
   MdiBellNotificationOutline,
   PhChat,
 } from "../../assets/Icons";
-import Image from "../../assets/StartUpMentors/profile.jpg";
-import worktime from "../../assets/StartUpMentors/Worktime-pana.jpg";
-import Session from "../../assets/StartUpMentors/Session.jpg";
-import star from "../../assets/StartUpMentors/star.jpg";
-import student1 from "../../assets/StartUpMentors/student/student1.jpg";
-import student2 from "../../assets/StartUpMentors/student/student2.jpg";
-import student3 from "../../assets/StartUpMentors/student/student3.jpg";
-import student4 from "../../assets/StartUpMentors/student/student4.jpg";
+import {
+  Image,
+  worktime,
+  Session,
+  star,
+} from "../../assets/StartUpMentors/index";
+import {
+  student1,
+  student2,
+  student3,
+  student4,
+} from "../../assets/StartUpMentors/student/index";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 

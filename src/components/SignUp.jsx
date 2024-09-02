@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/signUpImage.png";
+import { signUpImage } from "../assets/index";
 import { FaGoogle, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { GoTriangleDown } from "react-icons/go";
@@ -19,7 +19,11 @@ const SignUp = () => {
           Easy way to get your dream job{" "}
           <span className="font-bold text-blue-800">"Become an Xpert"</span>
         </p>
-        <img src={image} alt="" className="w-full h-[550px] object-cover" />
+        <img
+          src={signUpImage}
+          alt=""
+          className="w-full h-[550px] object-cover"
+        />
         <div className="flex gap-3 text-pink-500">
           <FaGoogle className="h-5 w-5" />
           <FaFacebookF className="h-5 w-5" />

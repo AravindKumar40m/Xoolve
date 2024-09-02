@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import google from "../../assets/jobPicture/Google.jpg";
-import arrow from "../../assets/jobPicture/arrow.png";
-import verified from "../../assets/jobPicture/verified.png";
+import { arrow, verified, google } from "../../assets/jobPicture/index";
 import { IcOutlineShare } from "../../assets/Icons";
 
 const JobDetailPage = ({ setOpenModal }) => {

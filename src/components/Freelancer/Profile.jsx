@@ -8,11 +8,7 @@ import {
   LucideUsers,
   OcticonPlus16,
 } from "../../assets/Icons";
-import profile from "../../assets/profile.png";
-import mail from "../../assets/Letter.png";
-import lawyer from "../../assets/Lawyer.png";
-import phone from "../../assets/Phone.png";
-import pdf from "../../assets/pdf.jpg";
+import { profile, mail, lawyer, phone, pdf } from "../../assets/index";
 
 const Profile = () => {
   const education = [
