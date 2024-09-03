@@ -8,6 +8,8 @@ import ProjectDashboard from "./components/Freelancer/ProjectDashboard";
 import MentorLayout from "./components/StartupMentors/Layout";
 import Dashboard from "./components/StartupMentors/Dashboard";
 import MentorProfile from "./components/StartupMentors/Profile";
+import StartUpDashboard from "./components/startUp/Dashboard";
+import StartUpLayout from "./components/startUp/Layout";
 
 const App = () => {
   return (
@@ -22,6 +24,9 @@ const App = () => {
         <Route path="/mentor/" element={<MentorLayout />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="profile" element={<MentorProfile />} />
+        </Route>
+        <Route path="/startup/" element={<StartUpLayout />}>
+          <Route path="dashboard" element={<StartUpDashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>

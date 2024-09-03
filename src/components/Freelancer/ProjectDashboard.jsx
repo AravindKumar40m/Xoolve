@@ -87,7 +87,7 @@ const ProjectDashboard = () => {
           />
           <button
             onClick={handleSearch}
-            className="ml-2 px-6 py-2 text-white font-semibold text-lg rounded-md flex justify-content space-x-2 bg-gradient-to-r from-[#FF00CC] via-[#9E18B4] to-[#333399] rounded-md hover:bg-gradient-to-br"
+            className="ml-2 px-6 py-2 text-white font-semibold text-lg flex justify-content space-x-2 bg-gradient-to-r from-[#FF00CC] via-[#9E18B4] to-[#333399] rounded-md hover:bg-gradient-to-br"
           >
             <IoIosSearch size={27} />
             Find
