@@ -10,12 +10,14 @@ import Dashboard from "./components/StartupMentors/Dashboard";
 import MentorProfile from "./components/StartupMentors/Profile";
 import StartUpDashboard from "./components/startUp/Dashboard";
 import StartUpLayout from "./components/startUp/Layout";
+import SignIn from "./components/SignIn";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SignUp />} />
+        <Route path="/" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/freelancer/" element={<Freelancer />}>
           <Route path="profile" element={<Profile />} />
           <Route path="job" element={<JobPage />} />

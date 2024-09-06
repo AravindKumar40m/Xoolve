@@ -7,7 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import Input from "./common/Input";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
+const SignIn = () => {
   return (
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 ">
       <div className="flex-1 p-10 flex flex-col gap-2 bg-[#ededed]">
@@ -33,34 +33,14 @@ const SignUp = () => {
         </div>
       </div>
       <div className="flex-1 px-20 py-10 flex flex-col gap-3">
-        <p className="flex items-center justify-end gap-1 text-blue-700">
+        <p className="flex items-center justify-end gap-1 text-blue-700 mb-10">
           English (USA) <GoTriangleDown className="h-7 w-7" />
         </p>
         <p className="text-[#777777] font-semibold">Start for Free</p>
-        <p className="text-4xl font-bold bg-gradient-to-r  from-[#fb01cb] via-[#333399]  to-[#333399] text-transparent bg-clip-text">
+        <p className="text-4xl mb-10 font-bold bg-gradient-to-r  from-[#fb01cb] via-[#333399]  to-[#333399] text-transparent bg-clip-text">
           Sign up to Xoolve
         </p>
         <form className="flex flex-col gap-4 pr-24">
-          <div className="flex flex-row gap-5">
-            <Input
-              id={"firstName"}
-              label={"First Name"}
-              placeholder={"First Name"}
-              type={"text"}
-            />
-            <Input
-              id={"lastName"}
-              label={"Last Name"}
-              placeholder={"Last Name"}
-              type={"text"}
-            />
-          </div>
-          <Input
-            id={"mobileNo"}
-            label={"Mobile No"}
-            placeholder={"1234567890"}
-            type={"text"}
-          />
           <Input
             id={"email"}
             label={"Email ID"}
@@ -73,7 +53,7 @@ const SignUp = () => {
             placeholder={"Password"}
             type={"password"}
           />
-          <button className="p-3 rounded-xl bg-gradient-to-r  from-[#fb01cb] via-[#333399]  to-[#333399] font-bold text-white">
+          <button className="p-3 mt-10 rounded-xl bg-gradient-to-r  from-[#fb01cb] via-[#333399]  to-[#333399] font-bold text-white">
             Create Account
           </button>
           {/* <div className="p-[2px] bg-gradient-to-r from-[#fb01cb] via-[#333399] to-[#333399] rounded-xl"> */}
@@ -82,10 +62,13 @@ const SignUp = () => {
           </button>
           {/* </div> */}
         </form>
-        <p className="text-[#777777]">
-          Already have account?{" "}
-          <Link to={"/"} className="text-blue-700 font-semibold underline">
-            Sign In
+        <p className="text-[#777777] mb-5">
+          Don't have an account?{" "}
+          <Link
+            to={"/signup"}
+            className="text-blue-700 font-semibold underline"
+          >
+            Sign Up
           </Link>
         </p>
         <div className="flex gap-1 items-baseline">
@@ -101,4 +84,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;
