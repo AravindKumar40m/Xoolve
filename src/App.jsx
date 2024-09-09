@@ -13,6 +13,8 @@ import StartUpLayout from "./components/startUp/Layout";
 import SignIn from "./components/SignIn";
 import Ideathon from "./components/Ideathon/Ideathon";
 import IdeathonDashboard from "./components/Ideathon/Dashboard";
+import Business from "./components/Business/Business";
+import BusinessDashboard from "./components/Business/Dashboard";
 const App = () => {
   return (
     <BrowserRouter>
@@ -33,6 +35,9 @@ const App = () => {
         </Route>
         <Route path="/ideathon" element={<Ideathon/>}>
           <Route path="dashboard" element={<IdeathonDashboard />} />
+        </Route>
+        <Route path="/business" element={<Business/>}>
+          <Route path="dashboard" element={<BusinessDashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
