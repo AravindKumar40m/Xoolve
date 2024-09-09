@@ -2,7 +2,7 @@ import React from "react";
 import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
 
-const Freelancer = () => {
+const Ideathon = () => {
   return (
     <main className="flex w-full h-screen">
       <SideBar className="w-64 h-full fixed top-0 left-0" />
@@ -15,4 +15,4 @@ const Freelancer = () => {
   );
 };
 
-export default Freelancer;
+export default Ideathon;
