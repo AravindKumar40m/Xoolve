@@ -1,12 +1,13 @@
 import React from "react";
 
-const Input = ({ id, label, type, placeholder, handleChange }) => {
+const EditInput = ({ id, label, type, placeholder, handleChange, value }) => {
   return (
     <div className="flex flex-col flex-1 gap-1">
       <label htmlFor={label} className="font-semibold">
         {label}
       </label>
       <input
+        value={value}
         onChange={handleChange}
         type={type}
         placeholder={placeholder}
@@ -17,4 +18,4 @@ const Input = ({ id, label, type, placeholder, handleChange }) => {
   );
 };
 
-export default Input;
+export default EditInput;

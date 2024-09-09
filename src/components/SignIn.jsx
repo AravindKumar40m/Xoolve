@@ -1,13 +1,80 @@
-import React from "react";
+import React, { useState } from "react";
 import { signUpImage } from "../assets/index";
 import { FaGoogle, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { GoTriangleDown } from "react-icons/go";
 import { FcGoogle } from "react-icons/fc";
 import Input from "./common/Input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "../redux/userSlice";
+import { toast } from "react-hot-toast";
 
 const SignIn = () => {
+  const URL = import.meta.env.VITE_APP_BASE_URL;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [formData, setFormData] = useState({});
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const loadingToastId = toast.loading("Logging in...", {
+      style: {
+        backgroundColor: "#4a90e2",
+        color: "white",
+        borderRadius: "0.375rem",
+        padding: "0.75rem 1.25rem",
+        fontSize: "0.875rem",
+        fontWeight: "bold",
+      },
+    });
+
+    axios
+      .post(URL + "user/login", formData)
+      .then((res) => {
+        document.cookie = `token=${res.data.token}; path=/; SameSite=None; Secure`;
+        toast.success("Login Successful", {
+          style: {
+            backgroundColor: "#34d399",
+            color: "white",
+            borderRadius: "0.375rem",
+            padding: "0.75rem 1.25rem",
+            fontSize: "0.875rem",
+            fontWeight: "bold",
+          },
+        });
+        toast.dismiss(loadingToastId);
+        console.log(res.data);
+        dispatch(setUser(res?.data?.user));
+        if (res?.data?.user?.role === "Freelancer") {
+          navigate("/freelancer/profile");
+        }
+      })
+      .catch((err) => {
+        toast.error("Login Error: " + err.message, {
+          style: {
+            backgroundColor: "#ef4444",
+            color: "white",
+            borderRadius: "0.375rem",
+            padding: "0.75rem 1.25rem",
+            fontSize: "0.875rem",
+            fontWeight: "bold",
+          },
+        });
+        toast.dismiss(loadingToastId);
+        console.log(err);
+      });
+  };
+
   return (
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 ">
       <div className="flex-1 p-10 flex flex-col gap-2 bg-[#ededed]">
@@ -24,7 +91,7 @@ const SignIn = () => {
           alt=""
           className="w-full h-[550px] object-cover"
         />
-        <div className="flex gap-3 text-pink-500">
+        <div className="flex gap-3 text-pink-500 cursor-pointer">
           <FaGoogle className="h-5 w-5" />
           <FaFacebookF className="h-5 w-5" />
           <FaInstagram className="h-5 w-5" />
@@ -40,21 +107,23 @@ const SignIn = () => {
         <p className="text-4xl mb-10 font-bold bg-gradient-to-r  from-[#fb01cb] via-[#333399]  to-[#333399] text-transparent bg-clip-text">
           Sign up to Xoolve
         </p>
-        <form className="flex flex-col gap-4 pr-24">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 pr-24">
           <Input
             id={"email"}
             label={"Email ID"}
             placeholder={"abc@gmail.com"}
+            handleChange={handleChange}
             type={"email"}
           />
           <Input
             id={"password"}
             label={"Password"}
             placeholder={"Password"}
+            handleChange={handleChange}
             type={"password"}
           />
           <button className="p-3 mt-10 rounded-xl bg-gradient-to-r  from-[#fb01cb] via-[#333399]  to-[#333399] font-bold text-white">
-            Create Account
+            Log In
           </button>
           {/* <div className="p-[2px] bg-gradient-to-r from-[#fb01cb] via-[#333399] to-[#333399] rounded-xl"> */}
           <button className="w-full p-3 rounded-xl bg-white text-transparent bg-clip-text bg-gradient-to-r from-[#fb01cb] via-[#333399] to-[#333399] border-2 border-rose-400 flex items-center justify-center gap-2">
