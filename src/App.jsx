@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import Freelancer from "./components/Freelancer/Freelancer";
 import Profile from "./components/Freelancer/Profile";
@@ -11,17 +11,25 @@ import MentorProfile from "./components/StartupMentors/Profile";
 import StartUpDashboard from "./components/startUp/Dashboard";
 import StartUpLayout from "./components/startUp/Layout";
 import SignIn from "./components/SignIn";
+import { useSelector } from "react-redux";
 import Ideathon from "./components/Ideathon/Ideathon";
 import IdeathonDashboard from "./components/Ideathon/Dashboard";
 import Business from "./components/Business/Business";
 import BusinessDashboard from "./components/Business/Dashboard";
 const App = () => {
+  const { user } = useSelector((state) => state.user);
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/freelancer/" element={<Freelancer />}>
+        <Route
+          path="/freelancer/"
+          element={
+            user?.role === "Freelancer" ? <Freelancer /> : <Navigate to={"/"} />
+          }
+        >
           <Route path="profile" element={<Profile />} />
           <Route path="job" element={<JobPage />} />
           <Route path="projects" element={<ProjectDashboard />} />
@@ -33,7 +41,7 @@ const App = () => {
         <Route path="/startup/" element={<StartUpLayout />}>
           <Route path="dashboard" element={<StartUpDashboard />} />
         </Route>
-        <Route path="/ideathon" element={<Ideathon/>}>
+        <Route path="/ideathon" element={<Ideathon />}>
           <Route path="dashboard" element={<IdeathonDashboard />} />
         </Route>
         <Route path="/business" element={<Business/>}>

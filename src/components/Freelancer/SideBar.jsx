@@ -10,9 +10,28 @@ import {
   HeroiconsOutlineMenu,
   SolarLogout2BoldDuotone,
 } from "../../assets/Icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/userSlice";
 
 const SideBar = () => {
+  const URL = import.meta.env.VITE_APP_BASE_URL;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    axios
+      .get(URL + "user/logout")
+      .then((res) => {
+        console.log(res.data.message);
+        dispatch(setUser({}));
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="bg-gradient-to-b from-pink-200 to-purple-100 h-screen p-4 w-full md:w-[290px]">
       <div className="flex flex-col gap-5">
@@ -65,7 +84,10 @@ const SideBar = () => {
             </li>
           </Link>
         </ul>
-        <button className="bg-white p-2 py-3 text-lg rounded-full border-2 border-red-300 text-red-600 font-semibold flex items-center justify-center gap-3">
+        <button
+          onClick={handleLogout}
+          className="bg-white p-2 py-3 text-lg rounded-full border-2 border-red-300 text-red-600 font-semibold flex items-center justify-center gap-3"
+        >
           <SolarLogout2BoldDuotone className="size-6" />
           Logout
         </button>
