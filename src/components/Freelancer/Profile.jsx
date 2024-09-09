@@ -37,7 +37,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="min-h-screen w-full px-5">
+    <div className="min-h-screen w-full px-5 p-10">
       <div className="w-full h-full xl:h-full md:h-[250px] bg-white rounded-xl border border-1 flex flex-col md:flex-row">
         <div className="relative p-2 flex items-center">
           <img

@@ -11,7 +11,8 @@ import MentorProfile from "./components/StartupMentors/Profile";
 import StartUpDashboard from "./components/startUp/Dashboard";
 import StartUpLayout from "./components/startUp/Layout";
 import SignIn from "./components/SignIn";
-
+import Ideathon from "./components/Ideathon/Ideathon";
+import IdeathonDashboard from "./components/Ideathon/Dashboard";
 const App = () => {
   return (
     <BrowserRouter>
@@ -29,6 +30,9 @@ const App = () => {
         </Route>
         <Route path="/startup/" element={<StartUpLayout />}>
           <Route path="dashboard" element={<StartUpDashboard />} />
+        </Route>
+        <Route path="/ideathon" element={<Ideathon/>}>
+          <Route path="dashboard" element={<IdeathonDashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
