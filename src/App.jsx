@@ -18,6 +18,8 @@ import JobHosterLayout from "./components/JobHosters/Layout";
 import JobHosterDasboard from "./components/JobHosters/Dashboard";
 import JobHosterProfile from "./components/JobHosters/profile";
 
+import Business from "./components/Business/Business";
+import BusinessDashboard from "./components/Business/Dashboard";
 const App = () => {
   const { user } = useSelector((state) => state.user);
 
@@ -49,6 +51,9 @@ const App = () => {
         </Route>
         <Route path="/ideathon" element={<Ideathon />}>
           <Route path="dashboard" element={<IdeathonDashboard />} />
+        </Route>
+        <Route path="/business" element={<Business />}>
+          <Route path="dashboard" element={<BusinessDashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
