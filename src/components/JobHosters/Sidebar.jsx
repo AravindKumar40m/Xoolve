@@ -1,0 +1,101 @@
+import React from "react";
+import {
+  IconamoonProfileCircleThin,
+  CarbonSearch,
+  LucideUsers,
+  JamTaskList,
+  TablerDeviceIpadQuestion,
+  SimpleIconsFreelancer,
+  RiCustomerService2Line,
+  HeroiconsOutlineMenu,
+  SolarLogout2BoldDuotone,
+} from "../../assets/Icons";
+import {
+  FaBriefcase,
+  FaUsers,
+  FaProjectDiagram,
+  FaBuilding,
+  FaClipboardList,
+} from "react-icons/fa";
+import { FaHeadset } from "react-icons/fa6";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/userSlice";
+
+const SideBar = () => {
+  //   const URL = import.meta.env.VITE_APP_BASE_URL;
+  //   const navigate = useNavigate();
+  //   const dispatch = useDispatch();
+  //   const handleLogout = () => {
+  //     axios
+  //       .get(URL + "user/logout")
+  //       .then((res) => {
+  //         console.log(res.data.message);
+  //         dispatch(setUser({}));
+  //         navigate("/");
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   };
+
+  return (
+    <div className="bg-gradient-to-b from-pink-200 to-purple-100 h-screen p-4 w-full md:w-[290px]">
+      <div className="flex flex-col gap-5">
+        <p className="flex items-end justify-end">
+          <HeroiconsOutlineMenu className="size-6" />
+        </p>
+        <p className="text-4xl md:text-5xl font-extrabold bg-gradient-to-t from-[#333399] via-pink-400 to-pink-400 text-transparent bg-clip-text flex self-center">
+          Xoolve
+        </p>
+        <ul className="font-semibold text-[#707482] flex flex-col gap-3">
+          <Link to={"/jobhoster/profile"}>
+            <li className="p-3 flex gap-4">
+              <FaClipboardList className="size-6" /> Profile
+            </li>
+          </Link>
+          <Link to={"#"}>
+            <li className="p-3 flex gap-4">
+              <FaUsers className="size-6" />
+              My Network
+            </li>
+          </Link>
+          <Link to={"#"}>
+            <li className="p-3 flex gap-4">
+              <FaBuilding className="size-6" />
+              Companies
+            </li>
+          </Link>
+          <Link to={"#"}>
+            <li className="p-3 flex gap-4">
+              <FaBriefcase className="size-6" />
+              Jobs
+            </li>
+          </Link>
+          <Link to={"#"}>
+            <li className="p-3 flex gap-4">
+              <FaProjectDiagram className="size-6" />
+              Projects
+            </li>
+          </Link>
+          <Link to={"#"}>
+            <li className="p-3 flex gap-4">
+              <FaHeadset className="size-6" />
+              Help & Support
+            </li>
+          </Link>
+        </ul>
+        <button
+          //   onClick={handleLogout}
+          className="bg-white p-2 py-3 text-lg rounded-full border-2 border-red-300 text-red-600 font-semibold flex items-center justify-center gap-3"
+        >
+          <SolarLogout2BoldDuotone className="size-6" />
+          Logout
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default SideBar;

@@ -58,6 +58,9 @@ const SignIn = () => {
         if (res?.data?.user?.role === "Freelancer") {
           navigate("/freelancer/profile");
         }
+        if (res?.data?.user?.role === "JobHoster") {
+          navigate("/jobhoster/profile");
+        }
       })
       .catch((err) => {
         toast.error("Login Error: " + err.message, {

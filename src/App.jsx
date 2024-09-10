@@ -14,6 +14,10 @@ import SignIn from "./components/SignIn";
 import { useSelector } from "react-redux";
 import Ideathon from "./components/Ideathon/Ideathon";
 import IdeathonDashboard from "./components/Ideathon/Dashboard";
+import JobHosterLayout from "./components/JobHosters/Layout";
+import JobHosterDasboard from "./components/JobHosters/Dashboard";
+import JobHosterProfile from "./components/JobHosters/profile";
+
 const App = () => {
   const { user } = useSelector((state) => state.user);
 
@@ -31,6 +35,10 @@ const App = () => {
           <Route path="profile" element={<Profile />} />
           <Route path="job" element={<JobPage />} />
           <Route path="projects" element={<ProjectDashboard />} />
+        </Route>
+        <Route path="/jobhoster/" element={<JobHosterLayout />}>
+          <Route path="profile" element={<JobHosterProfile />} />
+          {/* <Route path="profile" element={<MentorProfile />} /> */}
         </Route>
         <Route path="/mentor/" element={<MentorLayout />}>
           <Route path="dashboard" element={<Dashboard />} />
